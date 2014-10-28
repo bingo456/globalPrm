@@ -93,7 +93,7 @@ int main(int argc,char* argv[])
             //6个坐标参数
             double oriadfGeoTransform[6];
             poDatasetBand2->GetGeoTransform(oriadfGeoTransform);
-            oriadfGeoTransform[5] = -926.625433;
+           // oriadfGeoTransform[5] = -926.625433; //转图片的时候错了所以加了这个
             GDALRasterBand* pRasterData = poDatasetBand2->GetRasterBand(1);
             short* dataBase = new short[1200*1200];
             pRasterData->RasterIO(GF_Read,0,0,nXSizeRaw,nYSizeRaw,dataBase,nXSizeRaw,nYSizeRaw,GDT_Int16,0,0);
